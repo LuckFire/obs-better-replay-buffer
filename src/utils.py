@@ -2,6 +2,8 @@ import psutil, win32process, win32gui
 from pathlib import Path
 
 def get_forground_process_name() -> str:
+    '''Get the currently selectoed window's process name.'''
+    
     foreground_window = win32gui.GetForegroundWindow()
     pid = win32process.GetWindowThreadProcessId(foreground_window)
     process_id = pid[-1]
@@ -9,6 +11,8 @@ def get_forground_process_name() -> str:
     return Path(psutil.Process(process_id).name()).stem
 
 def move_file(old: Path, new: Path) -> None:
+    '''Move the file to a different path.'''
+
     if (not new.parent.exists()):
         new.parent.mkdir(parents=True, exist_ok=True)
     

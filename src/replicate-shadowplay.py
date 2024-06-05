@@ -5,7 +5,7 @@ from utils import *
 replay_stopped_by_script = False
 
 def script_description() -> str:
-    return "PLACEHOLDER"
+    return "A python script for OBS that replicates the functionality of NVIDIA ShadowPlay video clipping."
 
 def obs_start_replay_buffer() -> None:
     '''Start the replay buffer if it is not started already.'''
@@ -17,6 +17,11 @@ def obs_start_replay_buffer() -> None:
     obs.remove_current_callback()
 
 def obs_get_saved_replay_path() -> str:
+    '''
+    Get the path for the file that the replay buffer was saved to.
+    https://github.com/redraskal/obs-replay-folders/blob/main/OBSReplayFolders.lua#L30-L39
+    '''
+
     replay_buffer = obs.obs_frontend_get_replay_buffer_output()
     calldata = obs.calldata_create()
     handler = obs.obs_output_get_proc_handler(replay_buffer)
