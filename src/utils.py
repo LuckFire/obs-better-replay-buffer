@@ -1,7 +1,6 @@
 import psutil, win32process, win32gui
 from pathlib import Path
 from json import load
-from os import getcwd
 
 def get_folder_name(fromName: str) -> str:
     '''
