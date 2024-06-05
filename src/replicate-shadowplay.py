@@ -51,6 +51,13 @@ def obs_frontend_callback(event: str) -> None:
             move_file(saved_file, new_location)
 
         obs.obs_frontend_replay_buffer_stop()
+
+        push_tray_notification(
+            "OBS Replay Buffer",
+            "Replay Buffer Saved",
+            f"The replay buffer has been successfully saved to the folder \"{process_name}\" in your OBS videos folder."
+        )
+
         return
     
     # Restart the buffer if it was stopped by the script.
