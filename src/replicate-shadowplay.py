@@ -43,7 +43,7 @@ def obs_frontend_callback(event: str) -> None:
     if (event == obs.OBS_FRONTEND_EVENT_REPLAY_BUFFER_SAVED):
         replay_stopped_by_script = True
 
-        process_name = get_forground_process_name()
+        process_name = get_folder_name(get_forground_process_name())
         saved_file = Path(obs_get_saved_replay_path())
         new_location = Path(saved_file.parent).joinpath(process_name, saved_file.name)
 
