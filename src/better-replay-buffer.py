@@ -5,7 +5,7 @@ from utils import *
 replay_stopped_by_script = False
 
 def script_description() -> str:
-    return "A python script for OBS that replicates the functionality of NVIDIA ShadowPlay video clipping."
+    return "A Python script that improves the quality of OBS' replay buffer.\n- Automatically clear the replay buffer when saved.\n- Save replay files to folders based on the process name.\n- System notification for when a replay is saved and where to.",
 
 def obs_start_replay_buffer() -> None:
     '''Start the replay buffer if it is not started already.'''
