@@ -70,3 +70,6 @@ def obs_frontend_callback(event: str) -> None:
 
 def script_load(__settings__) -> None:
     obs.obs_frontend_add_event_callback(obs_frontend_callback)
+
+def script_unload() -> None:
+    obs.obs_frontend_remove_event_callback(obs_frontend_callback)
